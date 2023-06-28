@@ -1,1 +1,85 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Price Prediction</title>
+</head>
+<body>
+    <h1>Price Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="City">City:</label>
+        <select name="City" id="City">
+            <option value="פתח תקווה">פתח תקווה</option>
+            <option value="נתניה">נתניה</option>
+            <option value="באר שבע">באר שבע</option>
+            <option value="הרצליה">הרצליה</option>
+            <option value="דימונה">דימונה</option>
+            <option value="רחובות">רחובות</option>
+            <option value="גבעת שמואל">גבעת שמואל</option>
+            <option value="ירושלים">ירושלים</option>
+            <option value="שוהם">שוהם</option>
+            <option value="כפר סבא">כפר סבא</option>
+            <option value="נהריה">נהריה</option>
+            <option value="זכרון יעקב">זכרון יעקב</option>
+            <option value="קרית ביאליק">קרית ביאליק</option>
+            <option value="חיפה">חיפה</option>
+            <option value="הוד השרון">הוד השרון</option>
+            <option value="תל אביב">תל אביב</option>
+            <option value="ראשון לציון">ראשון לציון</option>
+            <option value="יהוד מונוסון">יהוד מונוסון</option>
+            <option value="רעננה">רעננה</option>
+            <option value="נס ציונה">נס ציונה</option>
+            <option value="אילת">אילת</option>
+            <option value="חולון">חולון</option>
+            <option value="מודיעין מכבים רעות">מודיעין מכבים רעות</option>
+            <option value="צפת">צפת</option>
+            <option value="בת ים">בת ים</option>
+            <option value="רמת גן">רמת גן</option>
+            <option value="נוף הגליל">נוף הגליל</option>
+        </select>
+        <br>
+        <br>
+        <label for="type">Type:</label>
+        <select name="type" id="type">
+            <option value="דירה בבניין">דירה בבניין</option>
+            <option value="בית פרטי">בית פרטי</option>
+            <option value="פנטהאוז">פנטהאוז</option>
+            <option value="אחר">אחר</option>
+        </select>
+        <br>
+        <br>
+        <label for="room_number">Room Number:</label>
+        <input type="number" name="room_number" id="room_number" required>
+        <br>
+        <br>
+        <label for="Area">Area:</label>
+        <input type="number" name="Area" id="Area" required>
+        <br>
+        <br>
+        <label for="hasParking">Has Parking:</label>
+        <select name="hasParking" id="hasParking">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        <br>
+        <br>
+        <label for="hasMamad">Has Mamad:</label>
+        <select name="hasMamad" id="hasMamad">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        <br>
+        <br>
+        <label for="hasElevator">Has Elevator:</label>
+        <select name="hasElevator" id="hasElevator">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+    {% if predicted_price %}
+        <h2>Predicted Price: {{ predicted_price }}</h2>
+    {% endif %}
+</body>
+</html>
